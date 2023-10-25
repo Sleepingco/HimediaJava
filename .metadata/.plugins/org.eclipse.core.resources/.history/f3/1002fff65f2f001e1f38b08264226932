@@ -1,0 +1,89 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.util.Enumeration" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원정보</title>
+</head>
+<jsp:include page="header.jsp" />
+<body>
+<%
+	String id =request.getParameter("userid");
+	String pw =request.getParameter("passcode1");
+	String name =request.getParameter("name");
+	String bday =request.getParameter("birthday");
+	String g =request.getParameter("gender");
+	String ph =request.getParameter("mobile");
+	
+	
+	out.print("아이디: "+id+"<br>");
+	out.print("비번: "+pw+"<br>");
+	out.print("이름: "+name+"<br>");
+	out.print("생일: "+bday+"<br>");
+	out.print("성별: "+g+"<br>");
+	out.print("번호: "+ph+"<br>");
+	
+%>
+<br><br><br>
+컨텍스트패스 : <%=request.getContextPath() %><br>
+요청방식 : <%=request.getMethod() %><br>
+요청한URL : <%=request.getRequestURL() %><br>
+요청한 URI : <%=request.getRequestURI() %><br>
+서버의 이름 : <%=request.getServerName() %><br>
+프로토콜 : <%=request.getProtocol() %><br><br><br>
+GetParameterNames :<br>
+<%
+	Enumeration <String> e=request.getParameterNames();
+	while(e.hasMoreElements()){
+		String pname = e.nextElement();
+		out.print(pname+"<br>");
+	}
+%>
+<br><br><br>
+아이디: <%=request.getParameter("userid")+"<br>" %>
+비번: <%=request.getParameter("passcode1")+"<br>" %>
+이름: <%=request.getParameter("name")+"<br>" %>
+생일: <%=request.getParameter("birthday")+"<br>" %>
+성별: <%=request.getParameter("gender")+"<br>" %>
+전번: <%=request.getParameter("mobile")+"<br>" %>
+<br><br><br>
+interest: 
+<% 
+	String sItem="";
+	String items[]=request.getParameterValues("interest");
+	for(String item : items){
+		if(!sItem.equals("")) sItem+=",";
+		sItem+=item;
+	}
+	out.print(sItem);
+%>
+<br>
+region: 
+<% 
+	String sRegion="";
+	String regions[]=request.getParameterValues("region");
+	if(regions==null){
+		response.sendRedirect("http://www.amazon.com");// JAVACODE
+		//* document.location="www.amazon.com" // JSCODE */
+	}else{
+		for(String region : regions){
+			if(!sRegion.equals("")) sRegion+=",";
+			sRegion+=region;
+		}
+		out.print(sRegion);
+	}
+%>
+
+<br><br><br>
+
+<% String sGender[]=request.getParameterValues("gender");
+	out.print(request.getParameterValues("gender"));
+	if(sGender.equals("male")){ %>
+<a href='http://amazon.com'>아마존으로 이동</a> 
+<%} else { %>
+<a href='http://instagram.com'>인스타로 이동</a>
+<%} %>
+</body>
+</html>

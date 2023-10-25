@@ -1,0 +1,66 @@
+//package com.himedia.springboot;
+//
+//import java.util.ArrayList;
+//
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.stereotype.Controller;
+//import org.springframework.ui.Model;
+//import org.springframework.web.bind.annotation.GetMapping;
+//
+//
+//import jakarta.servlet.http.HttpServletRequest;
+//import jakarta.servlet.http.HttpSession;
+//
+//
+//@Controller
+//public class P_SearchbarController {
+//	@Autowired
+//	private P_SearchbarDAO adao;
+//	
+//	@GetMapping("/admin")
+//	public String admin() {
+//		return "P_memberModify";
+//	}
+//	@GetMapping("/")
+//	public String home(HttpServletRequest req, Model model) {
+//		HttpSession session = req.getSession();
+//		String userid=(String) session.getAttribute("id");
+//		
+//		if( userid==null ||userid.equals("")) {
+//			model.addAttribute(); 
+//			model.addAttribute("write",""); 
+//		}else {
+//			model.addAttribute("loginstr",userid+"&nbsp;&nbsp;<button id=btnLogout>로그아웃</button>");
+//			model.addAttribute("write","<a href='/write'>글쓰기</a>"); 
+//		}
+//		
+//		int start,psize;
+//		String page = req.getParameter("pageno");
+//		if(page==null || page.equals("")) {
+//			page="1";
+//		}
+//		int pno=Integer.parseInt(page);
+//		System.out.println("pno ["+pno+"]");
+//		start = (pno-1)*10;
+//		System.out.println("start ["+start+"]");
+//		psize = 10;
+//		ArrayList<BoardDTO> alBoard=bdao.getlist(start, psize);
+//		
+//		int cnt=bdao.getTotal();
+//		int pagecount = (int) Math.ceil(cnt/10.0);
+//
+//		System.out.println("pagecount="+pagecount);
+//		String pagestr="";
+//		for(int i=1; i<=pagecount;i++) {
+//			if(pno==i) {
+//				pagestr += i+"&nbsp;";
+//			}else {
+//				pagestr+="<a href='/?pageno="+i+"'>"+i+"</a>&nbsp;";
+//			}
+//		}
+//		model.addAttribute("pagestr",pagestr);
+//		System.out.println("retval"+alBoard.size());
+//		model.addAttribute("blist",alBoard);
+//		return "home";
+//	}
+//}

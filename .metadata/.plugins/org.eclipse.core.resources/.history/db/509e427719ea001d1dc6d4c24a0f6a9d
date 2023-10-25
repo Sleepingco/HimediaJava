@@ -1,0 +1,12 @@
+
+public class Hello4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int p=10/4;
+		float q=10/4f;
+		
+		System.out.printf("%d %4.2f", args,p,q);
+	}
+
+}

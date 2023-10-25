@@ -1,0 +1,83 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class menu2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner i1 = new Scanner(System.in);
+		Scanner s2 = new Scanner(System.in);
+
+		
+		//컴퓨터 기능 4가지
+		//C:reate
+		//R:ead
+		//U:pdate
+		//D:elete
+		//1.설명을출력("C:메뉴추가,R메뉴목록보기,U:메뉴수정,D:메뉴삭제,":프로그램 종룍")
+		//2.작업을 입력받는다(jpb)
+		//3.while(!job.equals("")){
+		//		if(job.equals("c")){
+		//			while(!menu.equals("")) {
+			/*				int price = s2.nextInt();
+		
+						alMenu.add(menu);
+						alPrice.add(price);
+		
+						menu=s1.nextLine();
+					} */
+		//if(job.equals("r")){
+		//4.System.out.println("------------------------------");
+		/*  for(int i=0; i<alMenu.size(); i++) {
+			System.out.printf("%-15s %-4d\n",alMenu.get(i),alPrice.get(i));
+		} */
+//		ArrayList<String> alMenu = new ArrayList<String>();
+//		ArrayList<Integer> alPrice = new ArrayList<Integer>();
+//	
+//		String menu=s1.nextLine();
+//		while(!menu.equals("")) {
+//			int price = s2.nextInt();
+//			
+//			alMenu.add(menu);
+//			alPrice.add(price);
+//			
+//			menu=s1.nextLine();
+//		}
+//		System.out.println("------------------------------");
+//		for(int i=0; i<alMenu.size(); i++) {
+//			System.out.printf("%-15s %-4d\n",alMenu.get(i),alPrice.get(i));
+//		}
+//		s1.close();
+//		s2.close();
+		
+		
+		
+		ArrayList<String> alMenu = new ArrayList<String>();
+		ArrayList<Integer> alPrice = new ArrayList<Integer>();
+	
+		System.out.println("작업을 입력하시오[c:메뉴추가, r:메뉴 목록보기, u:메뉴수정, d:메뉴삭제");
+		String job=i1.nextLine();
+		while(!job.equals("")) {
+			if(job.equals("c")) {
+				String menu = i1.nextLine();
+				int price = s2.nextInt();
+			
+				alMenu.add(menu);
+				alPrice.add(price);
+			
+				menu=i1.nextLine();
+			}else if(job.equals("r")){
+			System.out.println("------------------------------");
+			for(int i=0; i<alMenu.size(); i++) {
+				System.out.printf("%-15s %-4d\n",alMenu.get(i),alPrice.get(i));
+			}	
+		}else if(job.equals("u")) {
+			
+		}else if(job.equals("d")) {
+		
+		}
+		System.out.println("작업을 입력하시오[c:메뉴추가, r:메뉴 목록보기, u:메뉴수정, d:메뉴삭제");
+		}
+		System.out.println("메뉴관리 프로그램 종료");
+	}
+}

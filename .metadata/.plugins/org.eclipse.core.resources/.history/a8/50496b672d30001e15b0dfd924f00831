@@ -1,0 +1,79 @@
+package com.himedia.springboot;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import jakarta.servlet.http.HttpServletRequest;
+
+@Controller
+public class MyController {
+	// 클라이언트가ipadress:port 또는 ipadress:port/라고 주소창에 입력하면
+	//이 메소드가 실행된다
+	@GetMapping("/")
+	public String doHome() {
+		return "home";
+	}
+	
+	@GetMapping("/testone") // 도메인뒤에아무것도 안치면 / 가 있는거나 마찬가지이다
+	public String showHome() {
+		System.out.println("on");
+		return "test1"; //JSP화일이름(확장명제외)
+	}
+	@GetMapping("/testtwo") 
+	public String showSecond() {
+		System.out.println("on");
+		return "sub/test2"; 
+	}
+	@GetMapping("/getfour")
+	public String getFour() {
+		return "getfour";
+	}
+	@GetMapping("/showfour")
+	public String showFour() {
+		return "showfour";
+	}
+	@GetMapping("/jsst")
+	public String jsst() {
+		return "jsst";
+		}
+	@GetMapping("/jsgt")
+	public String jsgt() {
+		return "jsgt";
+		}
+	@PostMapping("/showtable")
+	public String showTable() {
+		return "showtable";
+	}
+	@GetMapping("/gettable") // 주소창에서 쳐서 접속하므로 Get을 쓰고 다른창으로 이동하면 post 사용가능 
+	public String getTable() {
+		return "gettable";
+	}
+	@GetMapping("/register") // 주소창에서 쳐서 접속하므로 Get을 쓰고 다른창으로 이동하면 post 사용가능 
+	public String signUp() {
+		return "member/signup";
+	}
+	@PostMapping("/signup")
+	public String dosignup1(HttpServletRequest hsr, Model model ) {
+		String userid=hsr.getParameter("userid");
+		String passcode=hsr.getParameter("passcode1");
+		String name = hsr.getParameter("name");
+		String birthday = hsr.getParameter("birthday");
+		String gender = hsr.getParameter("gender");
+		String mobile = hsr.getParameter("mobile");
+		model.addAttribute("login",userid);
+		model.addAttribute("pwd",passcode);
+		model.addAttribute("nme",name);
+		model.addAttribute("bday",birthday);
+		model.addAttribute("gender",gender);
+		model.addAttribute("mb",mobile);
+	
+		return "member/showmember";
+//		return "member/login";
+	}
+	@GetMapping("/signup")
+	public String dosignup2() {
+		return "member/login";
+	}
+}

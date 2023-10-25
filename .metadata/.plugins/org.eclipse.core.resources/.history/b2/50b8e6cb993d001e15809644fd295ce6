@@ -1,0 +1,51 @@
+package com.example.demo;
+
+public class CafeDTO {
+
+		int seq;
+		String name;
+		int price;
+		String date;
+		int phone;
+		int sum;
+		
+		
+		public String getDate() {
+			return date;
+		}
+		public void setDate(String date) {
+			this.date = date;
+		}
+		public int getPhone() {
+			return phone;
+		}
+		public void setPhone(int phone) {
+			this.phone = phone;
+		}
+		public int getSum() {
+			return sum;
+		}
+		public void setSum(int sum) {
+			this.sum = sum;
+		}
+		
+		public int getSeq() {
+			return seq;
+		}
+		public void setSeq(int seq) {
+			this.seq = seq;
+		}
+		public String getName() {
+			return name;
+		}
+		public void setName(String name) {
+			this.name = name;
+		}
+		public int getPrice() {
+			return price;
+		}
+		public void setPrice(int price) {
+			this.price = price;
+		}
+
+}

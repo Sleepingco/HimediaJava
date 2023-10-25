@@ -1,0 +1,60 @@
+package com.example.demo;
+
+import java.util.Date;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+
+@Controller
+public class MyController {
+	
+	@GetMapping("/")
+	public String home(HttpServletRequest req,Model model) { //HttpServletRequest req 스프링 프레임워크가 가지고있는 클래스이다 from태그이용해서 데이터를 보내면 Parameter정보,server정보,Client정보,session정보,connection정보를 가지고있다 jsp는 session.setAttribute()할수 있지만 컨트롤러는sess = req.getsession()으로 초기화를 해주고 sess.setAttribute(),sess.getAttribute()를 해야 쓸수있다
+		HttpSession session = req.getSession(); //세션사용을 위한 초기화
+		String userid=(String) session.getAttribute("userid");
+		if(userid==null||userid.equals("")) {
+			// 홈페이지 처음 들어간 경우 또는 로그인 실패하고 Home으로 돌아온 경우
+			model.addAttribute("name","");
+		}else {
+			model.addAttribute("name",(String) session.getAttribute("username"));
+			// 로그인 성공한 경우
+		}
+		return "Home";//화면에 jsp화일 띄우고 끝남
+	}
+	@GetMapping ("/login")
+	public String login(HttpServletRequest req) {
+		HttpSession session = req.getSession();
+		String userid = (String) session.getAttribute("userid");
+		if(userid==null||userid.equals("")) {
+			return "login"; 
+		} else {
+			return "redirect:/";
+		}
+		
+	}
+	@PostMapping ("/dologin")
+	public String dologin(HttpServletRequest req,Model model) {
+		String loginid=req.getParameter("loginid");
+		String pwd=req.getParameter("pwd");
+		if(loginid.equals("blackpink") && pwd.equals("apink")) {
+			HttpSession session = req.getSession();
+			session.setAttribute("userid", loginid);
+			session.setAttribute("username", "redvelvet");
+			session.setAttribute("now", new Date());
+			session.setAttribute("username", "redvelvet");
+			return "redirect:/"; // 해당하는 메소드까지 실행하고 url을 연결함
+		}
+		return "redirect:/login";
+	}
+	@GetMapping ("/logout")
+	public String doLogout(HttpServletRequest req) {
+		HttpSession session = req.getSession();
+		session.invalidate();
+		return "redirect:/";
+	}
+}

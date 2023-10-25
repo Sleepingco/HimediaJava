@@ -1,0 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Get Table</title>
+</head>
+<body>
+	<input type=number id=row name=row><br>
+	<input type=number id=col name=col><br>
+	<input type=button id=btnsubmit name='전송'><br>
+</body>
+</html>

@@ -1,0 +1,14 @@
+
+public class Arithmathic {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		FourOp first = new FourOp();
+		//a와 b값을 지정
+		//더하기
+		//빼기
+		//곱하기
+		//나누기
+	}
+
+}

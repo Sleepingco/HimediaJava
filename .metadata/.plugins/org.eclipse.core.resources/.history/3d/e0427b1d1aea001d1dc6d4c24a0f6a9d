@@ -1,0 +1,13 @@
+
+public class Hello4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int p=10/4;		//정수/정수=정수 정수/실수=실수
+		float q=10/4f;	//실수/정수=실수 실수/실수=실수
+		float o=10/4;	//뒤에 f를 안붙히면 나머지를 표기안함
+		
+		System.out.printf("%d %4.2f %f",p,q,o);
+	}
+
+}

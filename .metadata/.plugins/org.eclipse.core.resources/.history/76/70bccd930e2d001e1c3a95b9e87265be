@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Get Table</title>
+</head>
+<body>
+<form method="post" action="/showtable" id=frmtbl>
+	<input type=number name=row><br>
+	<input type=number name=col><br>
+	<input type=submit name='전송'><br>
+	
+</form>
+</body>
+<script src='https://code.jquery.com/jquery-Latest.js'></script>
+<script>
+$(document)
+.on('click','#frmtbl',function(){
+	
+	
+	alert(url);
+	
+	//document.location="/showfour?x="+$('#x').val()+"&y="+$('#y').cal()
+})
+// 1 form tag
+// 2 jQuery/js->document.location(Get)
+// 3 form tag + jQuery/ js -> submit
+// 3 중택일
+</script>
+</html>

@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ShowTable</title>
+</head>
+<body>
+<h1>
+<%
+	String sRow =request.getParameter("row");
+	String sCol =request.getParameter("col");
+	out.print("row="+++sRo", col="wsCol);
+%>
+</h1>
+</body>
+</html>

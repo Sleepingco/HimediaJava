@@ -1,0 +1,19 @@
+
+public class RCMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Television tv = new Television();
+		Audio audio = new Audio();
+		
+		tv.turnOn();
+		tv.setVolume(10);
+		tv.turnoff();
+		System.out.println("------------");
+		RemoteControl.changeBattery();
+		audio.turnOn();
+		audio.setVolume(2);
+		audio.turnoff();
+	}
+
+}

@@ -1,0 +1,28 @@
+
+public class sub4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a,b,c;//기교가 너무 들어가면 다른 사람이 코드를 읽기 힘들어진다
+		a=0;
+		b=c=0;
+		String y="hi",z="1"; //변수 선언 초기화 형식 예시
+		a+=3;
+		System.out.println(a*0);
+		System.out.println(a*1);
+		System.out.println(a*2);
+		System.out.println(a*3);
+		System.out.println(a*4);
+		System.out.println(a*5);
+		System.out.println(a*6);
+		
+		int x=0;
+		 System.out.println(x++); //출력은 0이지만 x에는 1이 저장됨
+		 System.out.println(x);	  //++증감연산자는 뒤에찍히면 우선순위가 맨뒤
+		 						  //앞에 찍히면 우선순위 맨앞으로 간다.
+		 System.out.println(a+","+b+","+c);
+		 System.out.println(y+" "+z+"\n"+a);
+		 
+	}								//자력코딩,정처기
+
+}

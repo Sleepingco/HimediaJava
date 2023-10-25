@@ -1,0 +1,15 @@
+server.port=8080
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp
+spring.devtools.livereload.enabled=true
+# MyBatis DBsetup
+spring.datasource.url: jdbc:mysql://localhost/mall?characterEncoding=utf8
+spring.datasource.username: root
+spring.datasource.password: himedia
+
+#spring.datasource.url: jdbc:mysql://192.168.0.65/mall?characterEncoding=utf8
+#spring.datasource.username: PSH
+#spring.datasource.password: qkrtjdgh123123
+
+spring.datasource.driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis.mapper-locations=classpath:mybatis/mapper/**/**.xml

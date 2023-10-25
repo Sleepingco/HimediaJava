@@ -1,0 +1,35 @@
+package com.example.demo;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+
+@Controller
+public class Testcontroller {
+	@GetMapping("/test01")
+	public String doTest01() {
+		return "test/test01";
+	}
+	@PostMapping("/plus")
+	public String doPlus(HttpServletRequest req) {
+		HttpSession session = req.getSession();
+		float num1=Float.parseFloat(req.getParameter("num1"));
+		float num2=Float.parseFloat(req.getParameter("num2"));
+		session.setAttribute("result", num1+num2);
+		return "test/result01";
+	}
+	@GetMapping("/test02")
+	public String doTest02(HttpServletRequest req) {
+		String num1=req.getParameter("num1");
+		String num2=req.getParameter("num2");
+		String num3 = num1+num2;
+		int nu1=Integer.parseInt(num1);
+		int nu2=Integer.parseInt(num2);
+		int nu3=Integer.parseInt(num3);
+		return "test/test02";
+	}
+}

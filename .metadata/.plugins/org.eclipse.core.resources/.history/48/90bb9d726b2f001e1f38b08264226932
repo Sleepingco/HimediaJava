@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>First</title>
+</head>
+<body>
+<%
+	String name="staname";// == pageContext
+	
+	pageContext.setAttribute("name","page man"); //페이지컨텍스트라는 내장객체에대가 name이라는 변수를 선언하고 그안에 page man이라고 값을 넣어준것 아래도 동일
+	request.setAttribute("name","request man");	//웹페이지라 다르게 표현한거다
+	session.setAttribute("name","sessing man");
+	application.setAttribute("name","application man");
+	
+	out.print("first Page");
+	out.print("페이지 변수:속성"+pageContext.getAttribute("name")+"<br>");
+	out.print("Request 변수:"+request.getAttribute("name")+"<br>");
+	out.print("Session 변수:"+session.getAttribute("name")+"<br>");
+	out.print("Application 변수:"+session.getAttribute("name"));
+%>
+</body>
+</html>

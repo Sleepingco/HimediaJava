@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.CafeDAO">
+<insert id="insert" parameterType="java.util.HashMap"><!-- parametertype = "java.util.HashMap" insert/update/delete 변경된 record의 갯수 insert를 실패하면 0 봔환 -->
+	insert into menu set name=#{param1},price=#{param2}
+</insert>
+<select id="select" resultType="com.example.demo.CafeDTO"><!-- resulttype = "DTO" select에서만 사용함 -->
+	select seq,name,price from menu order by seq desc	<!-- select count(*) as cnt from member 카운트라는 단일 타입일때는 resulttype에 int를 쓴다-->
+</select>
+<delete id="delete" parameterType="java.util.HashMap"> <!-- HashMap으로 쓰면 값을  -->
+	delete from menu WHERE seq = #{param1}
+</delete>
+<update id="update" parameterType="java.util.HashMap">
+	update menu set name=#{param2},price=#{param3} where seq=#{param1}
+</update>
+<insert id="order" parameterType="java.util.HashMap">
+	insert into outgo set date=#{param1},phone=#{param2},sum=#{param3}
+</insert>
+<select id="getsales" resultType="com.example.demo.CafeDTO">
+	select date,phone,sum from outgo
+</select>
+<insert id="regist" parameterType="java.util.HashMap"> 
+	insert into member set id=#{param1},password=#{param2}
+</insert>
+<select id="login" resultType="com.himedia.springboot.MemberDTO">
+	select count(*) from member where id=#{param1} and password=#{param2}
+</select>
+</mapper>

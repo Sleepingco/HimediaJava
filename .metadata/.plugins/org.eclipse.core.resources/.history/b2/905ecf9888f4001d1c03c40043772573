@@ -1,0 +1,8 @@
+
+public class Student {
+	String name;
+	String mobile;
+	String birthday;
+	String schoolName;
+	int entryYear;
+}

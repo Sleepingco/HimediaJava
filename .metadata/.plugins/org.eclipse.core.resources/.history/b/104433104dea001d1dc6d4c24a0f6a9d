@@ -1,0 +1,35 @@
+//비교 연산자
+public class hello5 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int a=5,b=3, c=7,d=7;
+		
+		System.out.println(a>b); //true
+		System.out.println(a<b); //false
+		System.out.println(a>=b);//true a>b or a==b
+		System.out.println(a<=b);//false a<b or a==b
+		System.out.println(a==b);//false
+		System.out.println(a!=b);//true
+		
+		System.out.println((a>b)+" "+(c>d)); 
+		System.out.println((a>b)+" "+(c>d)); 
+		System.out.println((a>=b)+" "+(c>=d));
+		System.out.println((a<=b)+" "+(c<=d));
+		System.out.println((a==b)+" "+(c==d));
+		System.out.println((a!=b)+" "+(c!=d));
+		//문자열 1.사전에서 먼저 나오면 작다 
+		//ex)"a"<"b" "a"<"aa" 
+		//"Hello"<"hello"
+		//"Hello"<"Hello " 
+		//"5">"15"
+		//"Hello123">"Hello12"
+		//"Hello world"<"Hello123"
+		//" "<"   "
+		//ASCII(American Standard Code for Information Interchange)코드로인해 순서가 정해짐
+		//""<"공백"<"0~9"<"A~Z"<"a~z"
+
+	}
+
+}

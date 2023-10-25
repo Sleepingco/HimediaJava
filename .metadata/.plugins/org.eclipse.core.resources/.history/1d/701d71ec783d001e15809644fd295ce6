@@ -1,0 +1,57 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>detail View (편집할때는 form view)</title>
+<style>
+table{
+	width:80%;
+	margin-left: auto;
+  	margin-right: auto;
+}
+
+table {
+	border-collapse:collapse;
+	width: 75%
+}
+table th{
+	background-color:black;color:yellow;
+	border:1px solid yellow
+}
+table td{
+	border:1px solid black
+}
+</style>
+</head>
+<body>
+<table>  <!-- ${bpost.seqno}표현언어로 jsp내부 장착이다 -->
+<tr><td>게시물번호</td><td id=seqno>${bpost.seqno}</td></tr>
+<tr><td>제목</td><td>${bpost.title}</td></tr>
+<tr><td>내용</td><td><textarea rows=10 cols=50 readonly>${bpost.content}</textarea></td></tr>
+<tr><td>작성자</td><td>${bpost.writer}</td></tr>
+<tr><td>조회수</td><td>${bpost.hit}</td></tr>
+<tr><td>작성시간</td><td>${bpost.created}</td></tr>
+<tr><td>수정시간</td><td>${bpost.updated}</td></tr>
+<tr><td><a href="/">목록으로</a></td>
+<td style='text-align:right'>
+${modidel}
+</td></tr>
+
+</table>
+</body>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(document)
+.on('click','#btnDelete',function(){
+	if(!confirm('정말지울까요?')) return false;
+	document.location='/delete?seqno='+$('#seqno').text();
+	return false;
+})
+.on('click','#btnUpdate',function(){
+	document.location='/update?seqno='+$('#seqno').text();
+	return false;
+})
+</script>
+</html>

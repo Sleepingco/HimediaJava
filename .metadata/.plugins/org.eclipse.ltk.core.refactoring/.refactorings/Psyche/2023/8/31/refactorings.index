@@ -1,0 +1,7 @@
+1690961144215	Delete element
+1691032128553	Rename type 'test01'
+1691044006221	Rename resource 'test01'
+1691044009796	Move 'test01.jsp' to 'test'
+1691044077112	Move 'result01.jsp' to 'test'
+1691044138715	Move 'test' to 'WEB-INF'
+1691044558821	Move 'test' to 'views'

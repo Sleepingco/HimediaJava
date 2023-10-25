@@ -1,0 +1,73 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+public class sub4_3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner i=new Scanner(System.in);
+		Scanner s=new Scanner(System.in);
+		ArrayList<Integer> price = new ArrayList<Integer>();
+		ArrayList<String> Menu = new ArrayList<String>();
+		
+		
+		String word=""; //nextLine은 값을 읽는 다는 뜻 내가 enter로 값을 입력하기 전까지 다른일을 안한다
+		int num;
+		
+//		word=s.nextLine();
+//		
+//		while(!word.equals("")){
+//			num=i.nextInt();
+//			Menu.add(word);
+//			price.add(num);
+//			word=s.nextLine();
+//			
+//		}
+//		int ndx=0;
+//		System.out.println("-----------");
+//		while(ndx<Menu.size()) {
+//		System.out.println(Menu.get(ndx)+" "+price.get(ndx));
+//		ndx++;
+//		}
+//		i.close();
+//		s.close();
+		
+		
+//		while(true) {
+//			String name=s.nextLine();
+//			if(name.equals("")) break;
+//			num=i.nextInt();
+//			Menu.add(name);
+//			price.add(num);
+//			}
+//		int ndx=0;
+//		while(ndx<Menu.size()) {
+//		System.out.println(Menu.get(ndx)+" "+price.get(ndx));
+//		ndx++;
+//		}
+//		i.close();
+//		s.close();
+		while(true) {
+			String name=s.nextLine();
+			if(name.equals("")) break;
+			
+//			String name2=s.nextLine();
+			
+//			int price=(name2.equals(""))?Integer.parseInt(name2);
+//			int price; //위 아래 같은코드
+//			if(name2.equals("")) name2=0;
+//			else price=Integer.parseInt(name2);
+			num=i.nextInt();
+			Menu.add(name);
+			price.add(num);
+			}
+		int ndx=0;
+		while(ndx<Menu.size()) {
+		System.out.println(Menu.get(ndx)+" "+price.get(ndx));
+		ndx++;
+		}
+		i.close();
+		s.close(); //break;는 조건에 맞으면 가장 안쪽(가까운)에 반복문을 종료
+					//continue;는 가장 안쪽(가까운)에 반복문을 다시 실실행
+	}
+
+}

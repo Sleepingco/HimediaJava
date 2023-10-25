@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ShowTable</title>
+</head>
+<body>
+<h1>
+<%
+	String sRow =request.getParameter("row");
+	String sCol =request.getParameter("col");
+	int nRow = Integer.parseInt(sRow);
+	int nCol = Integer.parseInt(sCol);
+	out.print("row="+sRow+", col="+sCol);
+	String Table="<table style='border-collapse:collapse';>";
+	for(int i=0;i<nRow;i++){
+		Table+="<tr>";
+		for(int j=0;j<nCol;j++){
+			
+				Table+="<td style='width:60px;height:60px;border:2px solid blue;'>"+"</td>";
+			
+			
+		}Table+="</tr>";
+	}
+	Table+="</table>";
+	out.print(Table);
+%>
+</h1>
+</body>
+</html>

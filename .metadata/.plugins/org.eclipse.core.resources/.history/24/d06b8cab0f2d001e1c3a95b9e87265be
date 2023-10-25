@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Get Table</title>
+</head>
+<body>
+<form method="post" action="/showtable" id=frmtbl>
+	ROW:<input type=number name=row id="row"><br>
+	COL:<input type=number name=col id="col"><br>
+	<input type=submit value='제출'><br>
+	
+</form>
+</body>
+<script src='https://code.jquery.com/jquery-Latest.js'></script>
+<script>
+$(document)
+.on('click','#frmtbl',function(){
+	if($('#row')==''||$('#row')==null){
+		alert("값이 입력되지 않음");
+		return false;
+	}
+	if($('#col')==''||$('#col')==null){
+		alert("값이 입력되지 않음");
+		return false;
+		
+	}
+	return true;
+	//document.location="/showfour?x="+$('#x').val()+"&y="+$('#y').cal()
+})
+// 1 form tag
+// 2 jQuery/js->document.location(Get)
+// 3 form tag + jQuery/ js -> submit
+// 3 중택일
+</script>
+</html>

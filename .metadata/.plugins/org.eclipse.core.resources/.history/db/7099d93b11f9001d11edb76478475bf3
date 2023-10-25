@@ -1,0 +1,19 @@
+import java.awt.Toolkit;
+
+public class BeepPrintMain {
+
+	public static void main(String[] args) {
+		Runnable bt = new BeepTask();
+		// TODO Auto-generated method stub
+		Toolkit tk = Toolkit.getDefaultToolkit();
+		for(int i=0; i<5; i++) {
+			tk.beep();
+			try {Thread.sleep(500);} catch (InterruptedException e) {}
+		}
+		for(int i=0; i<5; i++) {
+			System.out.println("Click");
+			try {Thread.sleep(500);} catch (InterruptedException e) {}
+		}
+	}
+
+}

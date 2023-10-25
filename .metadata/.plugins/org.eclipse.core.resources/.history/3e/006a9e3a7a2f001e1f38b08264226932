@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+</head>
+<style>
+table{
+	border-collapse:collapse
+}
+td {
+	border:1px solid blue
+}
+</style>
+<body>
+<table style='width:100%'>
+<tr>
+	<td align=center><h1>웹사이트 회원관리</h1></td>
+</tr>
+<tr>
+	<td align=center> go home</td>
+</tr>
+</table>
+</html>

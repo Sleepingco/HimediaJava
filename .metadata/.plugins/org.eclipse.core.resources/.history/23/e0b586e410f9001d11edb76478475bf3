@@ -1,0 +1,10 @@
+
+public class BeepTask implements Runnable { //다른 코어에서 실행괼 쓰레드(클래스)
+
+	@Override
+	public void run() { 
+		// TODO Auto-generated method stub
+
+	}
+
+}

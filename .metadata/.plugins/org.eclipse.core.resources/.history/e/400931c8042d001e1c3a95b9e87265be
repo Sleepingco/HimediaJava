@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>get four</title>
+</head>
+<body>
+<form method="get" action="/showfour">
+	X:<input type=number name=x id=x><br>
+	Y:<input type=number name=y id=y><br>
+	<input type=submit value='전송'id=btnSubmit><br>
+</form>
+</body>
+<script src='https://code.jquery.com/jquery-Latest.js'></script>
+<script>
+$(documeny)
+.on('click','#btnSubmit',function(){
+	let x = $('#x').val();
+	let y = $('#y').val();
+	document.location='/showfour?x='+x+'&y='y;
+})
+</script>
+</html>

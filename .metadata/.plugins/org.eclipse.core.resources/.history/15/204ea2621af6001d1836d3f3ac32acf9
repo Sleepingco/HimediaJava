@@ -1,0 +1,100 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Order {
+	// 주문내역 - 메뉴명, 수량, 합계금액
+	ArrayList<String>alName;
+	ArrayList<Integer>alQty;
+	ArrayList<Integer>alSum;
+	private Scanner i1,s1;
+	Order(){
+		//alName, alQty, alSum 초기화
+		this.alName = new ArrayList<String>();
+		this.alQty = new ArrayList<Integer>();
+		this.alSum = new ArrayList<Integer>();
+		this.i1 = new Scanner(System.in);
+		this.s1 = new Scanner(System.in);
+	}
+	void control(Menu oMenu) {
+		while(true) {
+			System.out.println("Select task ['c':Add Order, 'd':Delete Order, 'r':Show Orderlist,'':Exit Order");
+			String job = s1.nextLine();
+			if(job.equals(""))break;
+			
+			if(job.equals("c")) {
+				this.add(oMenu);
+			}else if(job.equals("d")) {
+				this.delete();
+			}else if(job.equals("r")) {
+				this.display();
+			}
+			
+		}
+	}
+	void add(Menu cMenu) {//메인에 order.control(myMenu);에 myMenu값이 oMenu에 저장됨 이름이 같아도 상관 없음
+			//클래스 이름이 데이터 타입이 된다(Menu)
+			//Complex data type(built in:ArrayList,Scanner,FileWriter,FileReader)
+			//	User-Defined data type(사용자정의 :클래스 이름이 테이터 타입이 된다) 
+		//메뉴 목록을 보여준다
+		//메뉴 번호를 입력받는다
+		//해당 메뉴 가격을 알아낸다
+		//수량*가격 = 합계를 계산한다
+		//메뉴 이름 추가(alName)
+		//수량을 추가한다(alQty)
+		//합계를 추가한다(alSum)
+		while(true) {
+			cMenu.display();
+			System.out.println("select a menu ['':exit]");
+			String menu_no = this.s1.nextLine(); //nextInt는 빈 문자열을 인식안해서 String을 먼저쓰고 그걸 숫자로 바꾸는 방식
+			if(menu_no.equals(""))break;
+			int m_num = Integer.parseInt(menu_no);
+			String menuName = cMenu.getName(m_num);
+			int price = cMenu.getPrice(m_num);
+			
+			System.out.println("How many order you want?");
+			int qty = this.i1.nextInt();
+			if(qty==0) break;
+
+			this.alName.add(menuName);
+			this.alQty.add(qty);
+			this.alSum.add(qty*price);
+			System.out.println(menuName+" x "+qty+"=>"+(qty*price));
+		}
+	}
+	void delete() {
+		while(true) {
+			//주문내역 출력
+			//지울 주문번호 입력
+			//삭제
+				System.out.println("enter a menu to be deleted. negativeNumber=Exit");
+				for(int i = 0;i<this.alName.size();i++) {
+					System.out.printf("%2d %-2s %-3d %-6d\n",i,alName.get(i),alQty.get(i),alSum.get(i));
+				
+				int menuNum = this.i1.nextInt();
+				if(menuNum<0) break;
+				if(menuNum>=alName.size()) break; //방어적 코딩
+				if(menuNum<0||menuNum>=alName.size()) {
+					System.out.println();
+					break;
+				}
+				alName.remove(menuNum);
+				alQty.remove(menuNum);
+				}
+		}
+	}
+	void display() {
+		//주문 내역 출력
+		System.out.println("------------------------------");
+//		System.out.println("size="+this.alName.size());
+		
+		for(int i = 0;i<this.alName.size();i++) {
+			System.out.printf("%2d %-2s %-3d %-8d\n",i,alName.get(i),alQty.get(i),alSum.get(i));
+		}
+		int total=0;
+		for(int i = 0;i<this.alSum.size();i++) {
+//			total=total+this.alSum.get(i);
+			total+=this.alSum.get(i);
+		}
+		System.out.println("total= "+total);
+	}
+}

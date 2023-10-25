@@ -1,0 +1,18 @@
+//조건문:조건판단해서 실행할 문장을 선택 :if,switch
+//반복문:조건에 맞으면 반복:while,do-while,for
+public class Control_Statement01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+//		if(비교/논리){
+//			조건이'참(true)'일 때 실행문들
+//		}
+		int a=5,b=3;
+		if(a>b) {
+			System.out.println("a is greater than b.");
+		}
+		System.out.println("Program ended.");
+	}
+
+}

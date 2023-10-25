@@ -1,0 +1,164 @@
+import java.util.Scanner;
+public class sub4_2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner ii= new Scanner(System.in);
+//		Scanner si= new Scanner(System.in);
+		
+//		int i1=ii.nextInt();
+//		
+//		if (i1>50&&i1<100) { //복합연산자 두개의 조건이 참인경우에 출력된다 51~99
+//			System.out.println("50과 100사이의 숫자입니다");
+//		}else {
+//			System.out.println("범위밖의 숫자입니다");
+//		}
+//		System.out.println("Program ended");
+		
+//		int i1=i.nextInt();
+//		int i2=i.nextInt();
+//		
+//		if(i1>10||i2<10) {
+//			System.out.println("'i1'이 10보다 크거나 'i2'가 10보다 작다");
+//		}else if(i1<10&&i2<10) {
+//			System.out.println("'i1'이 10보다 크지않고 'i2'가 10보다 작다");
+//		}else {
+//			System.out.println("해당사항없음");
+//		}
+//		System.out.println("Program ended");
+		
+		
+		
+//		int i,j,sum;
+//		i=2;
+//		while(i<10) {
+//			j=1;
+//			while (j<10) {
+//				sum=i*j;
+//				System.out.println(i+"x"+j+"="+sum+"\n");
+//				j++;
+//			}
+//			i++;
+//		}
+//		System.out.println("Program ended");
+//		
+		
+//	피라미드
+//		int i,j;
+//		i=1;
+//		while(i<=10) {
+//			j=0;
+//			while(j<i) {
+//				System.out.print("+");
+//				j++;
+//			}
+//			i++;
+//			System.out.println();
+//		}
+		
+//		역피라미드
+//		int i,j;
+//		i=10;
+//		while(i>=1) { //while(i>0)
+//				j=1;	//j=0;
+//				while(j<=i) { //while(j<i)
+//					System.out.print("+");
+//					j++;
+//				}
+//				System.out.println();
+//			i--;
+//			
+//		}
+		
+		
+		
+//		int x,sum;					
+//		x=1;
+//		sum=0;
+//		while(sum<100) {
+//			sum=3*x;				//sum이 99인 상태로 while문으로 들어가면 한번더 sum값에 곱하기 3을 하므로 102가 출력됨
+//			System.out.println(sum);//그러므로 *3을 아래로 내리면 99까지만 출력됨 아래는 수정버전
+//			x++;
+//		}
+		
+
+//		int x,sum;					
+//		x=1;
+//		sum=0;
+//		while(sum<100) {
+//			System.out.println(sum);
+//			sum=3*x;
+//			x++;
+//		}
+		
+		
+		
+		
+//		int i = 0;				//3의배수 chatgpt
+//		while (i <= 100) {
+//		    System.out.println(i);
+//		    i += 3;
+//		}
+		
+		
+//	int i=1;		//강사님코드
+//	while(i<100) {
+//		if(i%3==0) {
+//			System.out.println(i);
+//		}
+//		i++;
+//	}
+		
+		
+		
+		
+		
+
+//	int c=ii.nextInt(); //원하는 수의 배수
+//	int v=i;
+//	while(i<100) {
+//		if(i%x==0) {
+//			System.out.println(i);
+//		}
+//		i++;
+//	}
+		
+		
+		
+//		1부터 100까지 더하는 코드
+//		int g=0;
+//		int total=0;
+//		while(g<=100) {
+//			total+=g; 	//위 아래 순서가 바뀌면  0~101까지 더한다
+//			g++;		//왜냐하면 i가 100을 도달한 다음에 a++를 더한다 그러고
+//						//101을 더한다음에 i가 101이라는 것을 인식 101도 더함
+//			
+//		}
+//		System.out.println(total);
+//		System.out.println("Program Ended");
+		
+		
+		
+		
+		
+//		피보나치수열					a=0; b=1;
+//		int a=0,b=1,c;				//c=a+b  
+//		c=1;						//if(c>1000) end여기서
+//		while(c<1000) {				//print(c)
+//									//a=b;
+//			System.out.println(c);	//b=c;
+//			a=b;					//c=a+b 여기까지 반복됨 반복으로 바꾸고 반복문으로 바꿀 수 있음
+//			b=c;					//if(c>1000) end
+//			c=a+b;					//print (c)
+//		}							//a=b; b=c; c=a+b ...,
+		int i=0;
+		
+		while(i<10) {
+			while(i>3&&i<9)
+			System.out.println();
+			i++;
+				
+		}
+	}											
+
+}

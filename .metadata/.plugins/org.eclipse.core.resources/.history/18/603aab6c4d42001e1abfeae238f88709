@@ -1,0 +1,30 @@
+package com.himedia.springboot;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+
+@Controller
+public class P_membercontroller {
+	@Autowired
+	private P_membercontrolDAO mcontDAO;
+	@GetMapping("/admin")
+	public String admin(HttpServletRequest req, Model model) {
+		HttpSession session=req.getSession();
+		try {
+			ArrayList<P_membercontrolDTO>mlist=mcontDAO.getmemberlist();
+			System.out.println("[memberlist :"+mlist+"]");
+			model.addAttribute("memberlist",mlist);
+			return "/P_job/P_membercontrollerJSP";
+		} catch(Exception e) {
+			return "/P_job/P_membercontrollerJSP";
+		}
+		
+	}
+}

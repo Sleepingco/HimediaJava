@@ -1,0 +1,25 @@
+package com.himedia.springboot;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+
+
+@Controller
+public class P_SearchbarController {
+	@Autowired
+	private P_SearchbarDAO adao;
+	
+	@GetMapping("/admin")
+	public String admin(HttpServletRequest req, Model model) {
+		HttpSession session = req.getSession();
+		return "P_memberModify";
+	}
+}

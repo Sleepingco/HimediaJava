@@ -1,0 +1,23 @@
+package com.himedia.springboot;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+
+@Controller
+public class P_membercontroller {
+	@Autowired
+	private P_membercontroller mcont;
+	@GetMapping("/admin")
+	public String admin(HttpServletRequest req, Model model) {
+		HttpSession session = req.getSession();
+		ArrayList<P_membercontrollDTO> mlist=mcont.getmemberlist();
+		return "P_memberModify";
+	}
+}

@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.devtools=2
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.lombok=2
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.mybatis=8
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.web=10
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.artifactId=Mall
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.bootVersion=3.1.2
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.description=Perosnal Project for Career
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.groupId=com.mall
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.javaVersion=17
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.language=java
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.name=Mall
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packageName=com.mall.start
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packaging=war
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.type=GRADLE
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.version=0.0.1-SNAPSHOT
+org.springframework.ide.eclipse.boot.wizard.initializr.url=https\://start.spring.io\n

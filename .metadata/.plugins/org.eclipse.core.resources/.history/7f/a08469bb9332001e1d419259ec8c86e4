@@ -1,0 +1,36 @@
+package com.example.demo;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class MyController {
+	@Autowired
+	private EmpDAO empdao; 
+	@Autowired
+	private EmpDAO depdao; 
+	@GetMapping("/")
+	public String root() {
+		return "home";
+	}
+	@GetMapping("/emplist")
+		public String doEmpList(Model model) {
+			//data가져오기
+			ArrayList<EmpDTO> alEmp =empdao.getEmpList();
+			//jsp에 보내기
+			model.addAttribute("list",alEmp);
+			return "list";
+		}
+	@GetMapping("/deplist")
+	public String doDepList(Model model) {
+		//data가져오기 (부서코드, 부서명, 매니저명)
+		ArrayList<DepDTO> alDep =empdao.getDepList();
+		//jsp에 보내기
+		model.addAttribute("dlist",alDep);
+		return "dlist";
+	}
+}

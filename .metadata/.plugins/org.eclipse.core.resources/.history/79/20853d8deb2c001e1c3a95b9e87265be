@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ShowTable</title>
+</head>
+<body>
+<h1>
+<%
+	String sRow =request.getParameter("row");
+	String sCol =request.getParameter("col");
+	out.print("row="+sRow+", col="+sCol);
+	String Table="<table style='border-collapse:collapse';>";
+	for(int i=0;i<m;i++){
+		Table+="<tr>";
+		for(int j=0;j<n;j++){
+			Table+="<td style=width:60px;height:60px></td>";
+		}Table+="</tr>";
+	}Table+="</table>";
+%>
+</h1>
+</body>
+</html>

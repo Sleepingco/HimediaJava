@@ -1,0 +1,83 @@
+
+public class Car {
+	public String color;	//색상 privete = 은닉
+	public int wheelCount;	//바퀴수
+	public int maxSpeed;	//최고속도
+	public int speed;		//현재속도
+	public String maker;	//제조업체
+	public String modelName;	//모델명
+	public int displacement;	//배기량
+	
+//	클래스		  자바	 c++	
+//		속성->변수->필드   ->멤버변수
+//		행위->함수->메소드 ->멤버함수
+	Car(){
+		
+	}
+	Car(String color,int wheelCount,int maxSpeed,int speed,String maker,String modelName,int displacement){
+		this.color = "white";
+		this.wheelCount =4;
+		this.maxSpeed=180;
+		this.speed=0;
+		this.maker="KIA";
+		this.modelName="Nobless";
+		this.displacement=1596;
+		
+	}
+	
+	public String getColor() {//외부로부터 값을 받아
+		return color;
+	}
+	public void setColor(String color) {//외부에 값을 전달
+		this.color = color;
+	}
+	public int getWheelCount() {	//private 을 썼을때 값을 전달하는 수단
+		return wheelCount;
+	}
+	public void setWheelCount(int wheelCount) {
+		this.wheelCount = wheelCount;
+	}
+	public int getMaxSpeed() {
+		return maxSpeed;
+	}
+	public void setMaxSpeed(int maxSpeed) {
+		this.maxSpeed = maxSpeed;
+	}
+	public int getSpeed() {
+		return speed;
+	}
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+	public String getMaker() {
+		return maker;
+	}
+	public void setMaker(String maker) {
+		this.maker = maker;
+	}
+	public String getModelName() {
+		return modelName;
+	}
+	public void setModelName(String modelName) {
+		this.modelName = modelName;
+	}
+	public int getDisplacement() {
+		return displacement;
+	}
+	public void setDisplacement(int displacement) {
+		this.displacement = displacement;
+	}
+
+	void drive(int nSpeed) {
+		if(nSpeed>this.maxSpeed) {
+			this.speed=this.maxSpeed; //this는 클래스에 속한 변수를 뜻함
+		}else {
+			this.speed=nSpeed;
+		}
+		System.out.println(this.modelName+" moving in "+this.speed+"km");
+	}
+	void stop() {
+		this.speed=0;
+		System.out.println(this.modelName+" car stop");
+	}
+}

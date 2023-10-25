@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form method="post" action="/dologin">
+<table>
+<tr><td>x<input type=password name=pwd></td><td>y<input type=text name=loginid><br></td><td><input type=submit id=btnSubmit value="result"></td></tr>
+</table>
+</form>
+</body>
+</html>

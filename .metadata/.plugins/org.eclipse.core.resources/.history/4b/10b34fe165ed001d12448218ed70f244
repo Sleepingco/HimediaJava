@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class sub4_1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner i=new Scanner(System.in);
+		int i1=i.nextInt();
+		int i2=i.nextInt();
+//		if(i1>50) {
+//			System.out.println("100이 입력됐습니다.");
+//		}else {
+//			System.out.println("100이 아닌 숫자입니다"+i1);
+//		}
+//		i.close(); 
+		
+//		System.out.println("Program ended");
+//	}
+//		if(i1>50) {
+//			System.out.println("50보다 크다"+"  "+" 나머지는= "+i1%7);
+//		}else{
+//			System.out.println("50보다 작거나 같다"+" 나머지는= "+i1%5);
+//		}
+//		i.close(); 
+//		System.out.println("Program ended");
+		if(i1>i2) {
+			System.out.println(i1+"\ti1 is greater than i2");
+		}else {
+			System.out.println(i2+"\ti2 is greater or equal to i1");
+		}i.close(); 
+			
+		}
+
+}

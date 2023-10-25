@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>get four</title>
+</head>
+<body>
+<form method="get" action="/showfour">
+	<input type=number name=x><br>
+	<input type=number name=y><br>
+	<input type=submit name='전송'><br>
+</form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Sales {
+	private ArrayList<String> alMobile;
+	private ArrayList<String> alMenu;
+	private ArrayList<Integer> alQty;
+	private ArrayList<Integer> alSum;
+	private ArrayList<String> alTime;
+	private Scanner i1,s1;
+	
+	
+	Sales(){
+		//reset
+		this.i1=new Scanner(System.in);
+		this.s1=new Scanner(System.in);
+	}
+	void add(Order sOrder,String phone) { //mobile,menuname.qty,sum from order,time(yyyyMMddhhmmss)//save in alTime
+		System.out.println("Input Mobile number for Membership");
+		String mobileNum = s1.nextLine();
+		String oMenu = sOrder.getName();
+		this.alMobile.add(mobileNum);
+		sorder.alName()
+	}
+	void display(){
+		//매출 데이터 전체 출력
+		//매출 총액 계산&출력
+	}
+}

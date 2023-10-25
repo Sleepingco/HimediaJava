@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+ <%@ page session="false" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Third</title>
+</head>
+<body>
+<%
+	out.print("third Page<br>");
+	out.print("페이지 변수:속성"+pageContext.getAttribute("name")+"<br>");
+	out.print("Request 변수:"+request.getAttribute("name")+"<br>");
+	out.print("Session 변수:"+session.getAttribute("name")+"<br>");
+	out.print("Application 변수:"+application.getAttribute("name"));
+%>
+</body>
+</html>

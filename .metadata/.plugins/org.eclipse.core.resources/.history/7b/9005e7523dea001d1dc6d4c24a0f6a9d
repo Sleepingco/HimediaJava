@@ -1,0 +1,27 @@
+
+public class sub4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a=3;
+		System.out.println(a*0);
+		a+=3;
+		System.out.println(a*1);
+		a+=3;
+		System.out.println(a*2);
+		a+=3;
+		System.out.println(a*3);
+		a+=3;
+		System.out.println(a*4);
+		a+=3;
+		System.out.println(a*5);
+		a+=3;
+		System.out.println(a*6);
+		
+		int x=0;
+		 System.out.println(x++); //출력은 0이지만 x에는 1이 저장됨
+		 System.out.println(x);	  //++증감연산자는 뒤에찍히면 우선순위가 맨뒤
+		 						  //앞에 찍히면 우선순위 맨앞으로 간다.
+	}
+
+}

@@ -1,0 +1,16 @@
+
+public class BeepPrint2Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		Thread thread = new BeepThread();
+//		thread.start();
+//		for(int i=0; i<10; i++) {
+//			System.out.println(i);
+//			try {Thread.sleep(500);} catch (InterruptedException e) {}
+//		}
+		double n = Math.pow(2, 3);// 거듭제곱 구하는 코드 임포트 필요없은 api
+		System.out.println(n);
+	}
+
+}

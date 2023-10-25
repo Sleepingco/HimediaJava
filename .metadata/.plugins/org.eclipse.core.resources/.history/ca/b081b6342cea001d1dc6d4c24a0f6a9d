@@ -1,0 +1,28 @@
+
+public class sub31 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a=2;
+		int b=0;
+		b++;
+		System.out.println(a+"x"+b+"="+(2*b));
+		b++;
+		System.out.println(a+"x"+b+"="+(a*b));
+		b++;
+		System.out.println(a+"x"+b+"="+(a*b));
+		b++;
+		System.out.println(a+"x"+b+"="+(a*b));
+		b++;
+		System.out.println(a+"x"+b+"="+(a*b));
+		b++;
+		System.out.println(a+"x"+b+"="+(a*b));
+		b++;
+		System.out.println(a+"x"+b+"="+(a*b));
+		b++;
+		System.out.println(a+"x"+b+"="+(a*b));
+		b++;
+		System.out.println(a+"x"+b+"="+(a*b));
+	}
+
+}

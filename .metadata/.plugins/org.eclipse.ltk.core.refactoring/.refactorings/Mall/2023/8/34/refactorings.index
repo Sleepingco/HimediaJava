@@ -1,0 +1,44 @@
+1692585561767	Move 'NewFile.css' to 'css'
+1692585568910	Rename resource 'NewFile.css'
+1692586633091	Move 'login.js' to 'css'
+1692587099537	Move 'login.css' to 'css'
+1692587101949	Move 'login.js' to 'js'
+1692605495109	Delete element
+1692605503958	Copy files
+1692605509435	Delete elements
+1692665769709	Rename resource 'logo'
+1692666401532	Delete element
+1692666435717	Rename resource 'tshirt.png'
+1692666443891	Rename resource 'moinlogo.png'
+1692676164212	Rename type 'products'
+1692680067201	Rename type 'productsDTO'
+1692683491982	Rename resource '남자 폴로티.jpg'
+1692683509951	Rename resource '남자스웨트셔츠jpg.jpg'
+1692685905513	Move 'mTop' to 'static'
+1692685909549	Move 3 resources to 'mTop'
+1692685920245	Rename resource 'productimg'
+1692685950655	Rename resource 'mTop'
+1692685966945	Move 2 resources to 'm'
+1692752279498	Rename resource 'm'
+1692752289967	Rename resource 'product'
+1692752322121	Move 3 resources to 'productimg'
+1692752327292	Delete elements
+1692753800073	Delete elements
+1692766542049	Delete element
+1692767061890	Copy file
+1692767064513	Delete element
+1692772305538	Rename resource 'P_searchbar.jsp'
+1692772516784	Rename type 'p_controller'
+1692774061496	Rename resource 'BookSearch.xml'
+1692840763102	Rename type 'P_Searchbar'
+1692843142284	Rename type 'P_SearchbatDTO'
+1692844742754	Move 3 resources to 'img'
+1692844775306	Move 3 resources to 'templates'
+1692844781232	Move 3 resources to 'productimg'
+1692854705930	Rename resource 'membercontroller.jsp'
+1692854711956	Rename resource 'p_membercontroller.jsp'
+1692854921812	Rename resource 'P_membercontroller.jsp'
+1692857186819	Rename type 'P_membercontroll'
+1692857251704	Rename resource 'P_memberModify.jsp'
+1692857301615	Rename resource 'memberlist.xml'
+1692857882891	Rename resource 'P_membercotrollerJSP.jsp'

@@ -1,0 +1,14 @@
+//연산자 103페이지
+public class Hello4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int p=10/4;		//정수/정수=정수 정수/실수=실수 실수가 포함되면 실수 결과 값임
+		float q=10/4f;	//실수/정수=실수 실수/실수=실수 '='은 오른쪽에 값을 왼쪽에 저장하는 배정 연산자
+		float o=10/4;	//뒤에 f를 안붙히면 나머지를 표기안함
+		int y=p*y;
+		System.out.printf("%d %4.2f %f",p,q,o);
+		System.out.println(y);
+	}
+
+}

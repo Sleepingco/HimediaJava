@@ -1,0 +1,8 @@
+
+public class Anonymous {
+	Person field;
+	
+	Anonymous(){
+		this.field = new Person1();
+	}
+}

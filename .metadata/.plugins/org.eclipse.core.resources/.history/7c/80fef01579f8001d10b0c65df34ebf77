@@ -1,0 +1,22 @@
+
+public class Audio implements RemoteControl {
+
+	@Override
+	public void turnOn() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void turnoff() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void setVolume(int Volume) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

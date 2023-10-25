@@ -1,0 +1,7 @@
+package com.himedia.springboot;
+
+public class P_SearchbatDTO {
+	String name;
+	String image;
+	int price;
+}

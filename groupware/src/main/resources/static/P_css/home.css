@@ -1,0 +1,445 @@
+@charset "UTF-8";
+
+.tab-view1 table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+/* 테이블 헤더 스타일 */
+.tab-view1 table thead {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.tab-view1 table thead th {
+    padding: 10px 15px;
+    font-weight: bold;
+    text-align: left;
+    border: 1px solid #d1d1d1;
+}
+
+/*.tab-view1 table thead th:last-child {*/
+/*    border-right: none;*/
+/*}*/
+
+/* 테이블 바디 스타일 */
+.tab-view1 table tbody td {
+    padding: 10px 15px;
+    border: 1px solid #d1d1d1;
+    border-top: none;
+    font-size:15px;
+}
+
+.tab-view1 table tbody tr:hover {
+    background-color: #e9e9e9;
+}
+
+/* 링크 스타일 (더보기 링크) */
+.tab-view1 a {
+    color: inherit;
+    text-decoration: none;
+    
+}
+
+
+
+/* 테이블 행 클릭 가능한 것을 표시 */
+.approval-row {
+    cursor: pointer;
+}
+
+.profile-box {
+    margin-left: 240px;
+    margin-top: 50px;
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  	margin-top: 89px;
+}
+
+.rounded-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 25%;
+}
+
+.profile-name {
+    text-align: center;
+}
+
+#btnLogout {
+    background-color: rgb(192, 192, 192);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-items: center;
+}
+
+#btnLogout:hover {
+    background-color: rgb(192, 192, 192);
+}
+
+.home-content {
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 20px;
+    width: 900px;
+}
+
+.announcement-box, .mail-box, .calender-box, .wait-box, .commu-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.announcement-box li, .commu-box li {
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd; 
+    padding: 10px 0;
+    transition: background-color 0.3s;
+}
+
+
+.announcement-box li:hover, .commu-box li:hover {
+    background-color: rgb(192, 192, 192);
+}
+.announcement-box span, .commu-box span {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+.announcement-box span a, .commu-box span a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.announcement-box span.title, .commu-box span.title {
+	  width: 40%;
+    text-align: left;
+    font-size: 15px;
+}
+
+.announcement-box span.content-text, .commu-box span.content-text {
+    width: 30%;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.announcement-box span.info, .commu-box span.info {
+    width: 25%;
+    text-align: right;
+}
+
+.announcement-box span.date, .commu-box span.date {
+    width: 15%;
+    text-align: right;
+}
+
+
+
+
+.tab-box ul, .tab-box1 ul {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    padding: 0;
+    list-style: none;
+}
+
+.tab-box li, .tab-box1 li {
+    cursor: pointer;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-bottom: none; 
+    margin-right: -1px; 
+}
+
+.tab-box li.selected, .tab-box1 li.selected1 {
+    background-color: #fff;
+    font-weight: bold;
+}
+
+.tab-view, .tab-view1 {
+    display: none;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.tab-view#tab1, .tab-view1#tab1-1 {
+    display: block;
+}
+
+.mail-box .tab-view {
+    padding: 15px;
+}
+
+
+.mail-name, .mail-email, .mail-subject, .mail-time {
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px 10px;
+   
+}
+
+.mail-name {
+    width: 200px;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mail-email {
+    width: 250px;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mail-subject {
+    width: 350px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mail-time {
+    width: 100px;
+    text-align: right;
+   
+    font-size: 0.8em;
+}
+
+
+.rMlist:hover, .sMlist:hover, .iMlist:hover {
+    background-color: rgb(192, 192, 192);
+}
+
+.rMlist:hover .mail-name, 
+.rMlist:hover .mail-email, 
+.rMlist:hover .mail-subject, 
+.rMlist:hover .mail-time,
+.sMlist:hover .mail-name, 
+.sMlist:hover .mail-email, 
+.sMlist:hover .mail-subject, 
+.sMlist:hover .mail-time,
+.iMlist:hover .mail-name, 
+.iMlist:hover .mail-email, 
+.iMlist:hover .mail-subject, 
+.iMlist:hover .mail-time {
+    color: rgb(0, 0, 0);
+}
+.rMlist, .sMlist, .iMlist {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.calendar{
+	width:400px;
+	height:500px;
+	background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border:1px solid lightgrey; 
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.asd{
+		display: flex;
+    border: 1px solid lightgrey;
+    border-bottom: none;
+    margin-top: 20px;
+    margin-bottom: 5%;
+    padding-right: 30px;
+}
+.fc .fc-toolbar-title{
+	font-size:1em;
+}
+.calendar_box{
+	margin-top:0px;
+}
+.fc .fc-button-primary{
+	background-color: rgb(106, 176, 173);
+}
+.fc .fc-button{
+	padding: 0.1em 0.2em;
+}
+.fc table{
+	font-size: 0.9em;
+}
+.seeMore{
+	margin-left:340px;
+	margin-bottom:10px;
+	cursor:pointer;
+}
+
+.mBtn{
+	border:1px solid rgb(106, 176, 173);
+	display:inline-block;
+	height:40px;
+	width: 102px;
+	padding-top:6px;
+	padding-left:4px;
+	border-radius:0.5em;
+	cursor:pointer;
+}
+.mBtn:hover{
+	transform: translateY(-5px);
+	box-shadow: 1px 1px 20px #ddd;
+}
+.icon{
+	width:30px;
+	height:23px;
+	position:relative;
+	top: 5px;
+}
+.centerD{
+	margin-top:10px;
+}
+
+.calendar {
+    width: 400px;
+    height: auto; /* 자동 높이 설정 */
+    background-color: white;
+    padding: 10px;
+    border: 1px solid lightgrey;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+    margin-bottom: 20px; /* 여백 추가 */
+}
+
+/* .calendar 내부의 ul 스타일 */
+.calendar ul {
+    list-style-type: none; /* 리스트 표시 제거 */
+    padding-left: 0; /* 왼쪽 패딩 제거 */
+}
+
+/* .calendar 내부의 li 스타일 */
+.calendar li {
+    display: flex; /* 플렉스로 정렬 */
+    justify-content: space-between; /* 내용 사이 간격 동일하게 설정 */
+    padding: 8px;
+    border-bottom: 1px solid lightgrey; /* 하단 경계선 추가 */
+}
+
+/* .calendar 내부의 span 스타일 */
+.calendar span {
+    font-size: 0.9em; /* 글자 크기 조절 */
+}
+
+/* .calendar 내부의 제목 span 스타일 */
+.calendar .calenderTitle {
+    font-weight: bold; /* 굵은 글자 */
+    color: #333; /* 글자 색상 */
+}
+
+/* .calendar 내부의 정보 span 스타일 */
+.calendar .calenderInfo {
+    color: #777; /* 글자 색상 */
+}
+
+/* 브레이크 부분 */
+.calendar br {
+    margin-top: 15px; /* 위쪽 여백 추가 */
+    }
+
+/* 근태 관리 섹션 스타일 */
+.attendance {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.01);
+    padding: 40px;
+    text-align: center;
+    font-size: 18px;
+    margin: 20px;
+    max-width: 150px;
+    margin: 0 auto;
+    position: relative;
+  	left: 120px;
+  	top:35px;
+}
+
+/* 출근/퇴근 버튼 스타일 */
+.btn {
+  padding: 15px 30px;
+  font-size: 17px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin: 15px 10px;
+  transition: all 0.3s ease;
+  border: none;
+  max-width: 130px;
+  max-height: 50px;
+}
+
+/* .btn 클래스의 disabled 상태 스타일 */
+.btn:disabled {
+    background-color: #ccc; /* 비활성 상태 배경색 */
+    color: #666; /* 비활성 상태 텍스트 색상 */
+    cursor: not-allowed; /* 비활성 상태에서 포인터 변경 방지 */
+}
+
+.btn-success {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.btn-warning {
+    background-color: #ff9800;
+    color: #fff;
+}
+
+/* 출근/퇴근 시간 스타일 */
+#checkin_time, #checkout_time {
+    font-size: 17px;
+    margin: 20px 0;
+    color: #333;
+    text-align: left;
+	font-weight: bold;
+}
+
+/* 링크 스타일 */
+h2 a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+h2 a:hover {
+    color: lightslategrey;
+}
+
+/* 현재 시간 스타일 */
+#current_time {
+    font-weight: bold;
+    color: #333;
+    font-size: 24px;
+}
+
+#date_info {
+	font-weight: bold;
+}
+
+
+
+
+.day{
+	  position: relative;
+    top: 20px;
+
+}

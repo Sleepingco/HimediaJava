@@ -1,0 +1,13 @@
+
+public class BeepPrint2Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		for(int i=0; i<10; i++) {
+			Thread thread = new BeepThread();
+			System.out.println(i);
+			try {Thread.sleep(500);} catch (InterruptedException e) {}
+		}
+	}
+
+}

@@ -1,0 +1,11 @@
+
+public class SmartPhone extends Phone {//자식 클래스,Sub Class,Child Class
+	SmartPhone(){
+		
+	}
+	SmartPhone(String x,String y){
+		super(x,y);
+//		this.model=x; 부모 생성자를 직접 쓸 수 도 있지만 
+//		this.color=y; super를 써서 부모 생성자 호출해서 파라미터를 넣을 수 있다.
+	}
+}

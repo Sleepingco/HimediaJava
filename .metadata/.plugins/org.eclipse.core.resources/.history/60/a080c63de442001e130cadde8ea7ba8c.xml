@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.himedia.springboot.mallDAO">
+
+<!-- 관리자 권한 체크 -->
+<select id="adminselect" resultType="com.himedia.springboot.mallDTO">
+	SELECT ADMIN FROM MEMBER WHERE userid=#{param}1 AND PASSWORD=#{param2}
+</select>
+
+
+<insert id="insert">
+	insert into member set userid=#{param1}, password=#{param2}, name=#{param3},
+		gender=#{param4},birthday=#{param5}, mobile=#{param6}, created=now()
+</insert>
+<select id="select" resultType="int">
+	select count(*) from member where userid=#{param1} and password=#{param2}
+</select>
+<select id="getHistory" resultType="com.himedia.springboot.mallDTO">
+	select seq,genre,name, price,img,author from product where genre="history" ORDER BY seq LIMIT #{param1}, #{param2}
+</select>
+<select id="getNovel" resultType="com.himedia.springboot.mallDTO">
+	select seq,genre,name, price,img,author from product where genre="novel" ORDER BY seq LIMIT #{param1}, #{param2}
+</select>
+<select id="getAll" resultType="com.himedia.springboot.mallDTO">
+    SELECT seq,genre,name, price,img,author FROM product ORDER BY seq LIMIT #{param1}, #{param2}
+</select>
+<select id="getTotal" resultType="int">
+	select count(*) from product
+</select>
+<select id="getnovelTotal" resultType="int">
+	select count(*) from product where genre="novel"
+</select>
+<select id="gethistoryTotal" resultType="int">
+	select count(*) from product where genre="history"
+</select>
+<select id="bselect" resultType="com.himedia.springboot.mallDTO">
+	select seq,genre,name,price,img,author,prodinfo from product where seq=#{param1} and genre=#{param2}
+</select>
+<select id="orders" resultType="com.himedia.springboot.mallDTO">
+	select seq,genre,name,price,img,author,prodinfo from product where seq=#{param1}
+</select>
+<insert id="paymentinsert">
+	insert into orders set userid=#{param1}, mobile=#{param2}, qty=#{param3}, sum=#{param4},
+		created=now()
+</insert>
+<insert id="addbookinsert">
+	insert into product set name=#{param1}, price=#{param2}, genre=#{param3},
+		img=#{param4}, author=#{param5}, prodinfo=#{param6}
+</insert>
+<update id="hitup">
+	update product set hit=hit+1 where seq=#{param1}
+</update>
+<select id="selectCart">
+	select seq,genre,name, price,img,author from cart
+</select>
+<insert id="addcart" >
+	insert into cart set prodid=#{param1}
+</insert>
+<select id="count" resultType="int">
+	select count(*) from cart where prodid=#{param1}
+</select>
+
+</mapper>

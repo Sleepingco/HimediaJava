@@ -1,0 +1,19 @@
+
+public class Play {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		GuGuDan gugudan = new GuGuDan();
+		
+		gugudan.setDan(2);
+		//출력메소드 호출
+		gugudan.setDan(3);
+		gugudan.setDan(4);
+		gugudan.setDan(5);
+		gugudan.setDan(6);
+		gugudan.setDan(7);
+		gugudan.setDan(8);
+		gugudan.setDan(9);
+	}
+
+}

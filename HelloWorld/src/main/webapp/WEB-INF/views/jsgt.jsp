@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Get Table</title>
+</head>
+<body>
+
+	row:<input type=number id=row name=row><br>
+	col:<input type=number id=col name=col><br>
+	<input type=button id=btnSubmit value="전송"><br>
+</body>
+<script src='https://code.jquery.com/jquery-Latest.js'></script>
+<script>
+//getTable을 자바스크립트로 처리하기
+$(document)
+.on('click','#btnSubmit',function(){
+	let row = $('#row').val();
+	let col = $('#col').val();
+	let url="/jsst?row="+row+"&col="+col;
+	alert(url);
+	document.location=url;
+	//document.location="/showfour?x="+$('#x').val()+"&y="+$('#y').cal()
+})
+// 
+</script>
+</html>

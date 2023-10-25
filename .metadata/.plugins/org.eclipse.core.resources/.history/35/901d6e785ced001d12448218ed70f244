@@ -1,0 +1,6 @@
+package sub4;
+import java.util.Scanner;
+public class sub4_1 {
+	int i1;
+	
+}

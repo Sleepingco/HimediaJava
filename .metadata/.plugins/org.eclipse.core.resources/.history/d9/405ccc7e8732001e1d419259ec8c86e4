@@ -1,0 +1,15 @@
+package com.example.demo;
+
+import lombok.Data;
+
+@Data //롬복
+public class EmpDTO {
+	//select 대상인 SQL컬럼들을 필드로 선언
+	String employee_id;
+	String emp_name;
+	int Salary;
+	int manager_id;
+	int department_id;
+}
+//자바 컴파일러 언어 .java-(JDK)>.class->JRE
+// 파이썬 인터프리터 언어

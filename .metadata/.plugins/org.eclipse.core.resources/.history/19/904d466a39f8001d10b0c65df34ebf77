@@ -1,0 +1,19 @@
+import java.util.ArrayList;
+
+public class Sales {
+	private ArrayList<String> alMobile;
+	private ArrayList<String> alMenu;
+	private ArrayList<Integer> alQty;
+	private ArrayList<Integer> alSum;
+	private ArrayList<String> alTime;
+	
+	Sales(){
+		//reset
+	}
+	void add() { //mobile,menuname.qty,sum from order,time(yyyymmddhhmmss)//save in al Time
+		
+	}
+	void disply{
+		
+	}
+}

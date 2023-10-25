@@ -1,0 +1,27 @@
+package com.example.demo;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+
+@Controller
+public class test01 {
+	@GetMapping("/test01")
+	public String doTest01() {
+		return "test01";
+	}
+	@PostMapping("/plus")
+	public String doPlus(HttpServletRequest req) {
+		HttpSession session = req.getSession();
+		float num1 = (float) session.getAttribute("num1");
+		float num2 = (float) session.getAttribute("num2");
+		
+		session.setAttribute("result", num1+num2);
+		return "redirect:/result01";
+	}
+	
+}

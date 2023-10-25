@@ -1,0 +1,197 @@
+package com.example.demo;
+
+import java.util.ArrayList;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+
+@Controller
+public class HomeController {
+	@Autowired
+	private CafeDAO cdao;
+	@Autowired
+	private MemberDAO mdao;
+	
+	@GetMapping("/")
+	public String cafe(HttpServletRequest req,Model model) {
+		 HttpSession session = req.getSession(); 
+		 String userid=(String) session.getAttribute("id");
+		 if( userid==null ||userid.equals("")) {
+		 model.addAttribute("infoline","<ing src='img/"+userid+".jpg' width=25%>&nbsp;"+userid+"<a href='/login'>로그인</a>&nbsp;&nbsp;<a href='/goregist'>회원가입</a>"); 
+		 }else { 
+//			 model.addAttribute("infoline",userid+"&nbsp;&nbsp;<a href='/logout'>로그아웃</a>");
+			 model.addAttribute("infoline",userid+"&nbsp;&nbsp;<button id=btnLogout>로그아웃</button>");
+		 }
+		return "cafe";
+	}
+	
+//	@PostMapping("/doLogin")
+//	public String doLogin(HttpServletRequest req,Model model) {
+//		try {
+//			String id=req.getParameter("id");
+//			String pw=req.getParameter("pw");
+//			int n = cdao.login(id,pw);
+//			if(n==1) {
+//				HttpSession s =req.getSession();
+//				s.setAttribute("id", id);
+//				return "redirect:/";
+//			} else {
+//				return "redirect:/login";
+//			}
+//		} catch(Exception e) {
+//			return "/login";
+//		}
+//		
+//	}
+	@PostMapping("/doLogin")
+	@ResponseBody
+	public String doLogin(HttpServletRequest req) {
+		try {
+			String id=req.getParameter("id");
+			String pw=req.getParameter("pw");
+			MemberDTO mdto =mdao.login(id, pw);
+			if(mdto!=null) {
+				HttpSession s =req.getSession();
+				s.setAttribute("id", id);
+				if(mdto.getSelficon()==null) {
+					s.setAttribute("selficon", "johndoe.jpg");
+				} else {
+					s.setAttribute("selficon", mdto.getSelficon());
+				}
+				return "/";
+			} else {
+				return "redirect:/login";
+			}
+		} catch(Exception e) {
+			return "/login";
+		}
+		
+	}
+	@GetMapping("/login")
+	public String login() {
+		return "Login";
+	}
+	@GetMapping("/logout")
+	public String doLogout(HttpServletRequest req) {
+		HttpSession s = req.getSession();
+		s.invalidate();
+		return "redirect:/";
+	}
+	
+	@PostMapping("/logout")
+	@ResponseBody
+	public String execLogout(HttpServletRequest req) {
+		HttpSession s = req.getSession();
+		s.invalidate();
+		return "/";
+	}
+	@GetMapping("/goregist")
+	public String goregist() {
+		return "Regist";
+	}
+	
+	@PostMapping("/regist")
+	@ResponseBody
+	public String regist(HttpServletRequest req) {
+		String id=req.getParameter("id");
+		String pw=req.getParameter("pw");
+		String retval="";
+		try {
+			int cnt= mdao.regist(id,pw);
+			retval=""+cnt;
+
+		} catch(Exception e) {
+			retval="-1";
+		}
+		return retval;
+	}
+	
+	
+	
+	
+	@GetMapping("/changemenu")
+	public String changemenu() {
+		System.out.println("menu");
+		return "Changemenu";
+	}
+	@SuppressWarnings("unchecked")
+	@PostMapping("/getmenulist")
+	@ResponseBody
+	public String getMenuList() {
+		ArrayList<CafeDTO> alMenu = cdao.select();
+		JSONArray ja = new JSONArray();
+		for(int i=0; i<alMenu.size();i++) {
+			JSONObject jo = new JSONObject();
+			jo.put("seq", alMenu.get(i).getSeq());
+			jo.put("menu", alMenu.get(i).getName());
+			jo.put("price", alMenu.get(i).getPrice());
+			ja.add(jo);
+		}
+		return ja.toJSONString();
+	}
+	@PostMapping("/insert") //insert는 DTO필요x
+	@ResponseBody
+	public String doInsert(HttpServletRequest req,Model model) {
+		String name = req.getParameter("name");
+		int price = Integer.parseInt(req.getParameter("price"));
+		int cnt=cdao.insert(name,price);
+		System.out.println("inserted count["+cnt+"]");
+		
+		return ""+cnt;
+	}
+	@PostMapping("/dodelete")
+	@ResponseBody
+	public String doDelete(HttpServletRequest req) {
+		int delNum = Integer.parseInt(req.getParameter("delNum"));
+		int cnt = cdao.delete(delNum);
+		System.out.println("cnt:"+cnt);
+		return ""+cnt;
+	}
+	@PostMapping("/update")
+	@ResponseBody
+	public String doUpdate(HttpServletRequest req) {
+		int menu_no=Integer.parseInt(req.getParameter("m_num"));
+		String name=req.getParameter("name");
+		int price=Integer.parseInt(req.getParameter("price"));
+		int cnt= cdao.update(menu_no,name,price);
+		return cnt+"";
+	}
+	
+	
+	@PostMapping("/outgo")
+	@ResponseBody
+	public String salesRec(HttpServletRequest req) {
+		String date = req.getParameter("date");
+		String phone = req.getParameter("phone");
+		int sum = Integer.parseInt(req.getParameter("sum"));
+		cdao.order(date,phone,sum);
+		return "";
+	}
+	
+	@SuppressWarnings("unchecked")
+	@PostMapping("/getsales")
+	@ResponseBody
+	public String getsales() {
+		ArrayList<CafeDTO> alMenu = cdao.getsales();
+		JSONArray ja = new JSONArray();
+		for(int i=0; i<alMenu.size();i++) {
+			JSONObject jo = new JSONObject();
+			jo.put("date", alMenu.get(i).getDate());
+			jo.put("phone", alMenu.get(i).getPhone());
+			jo.put("sum", alMenu.get(i).getSum());
+			ja.add(jo);
+		}
+		return ja.toJSONString();
+	}
+	
+}

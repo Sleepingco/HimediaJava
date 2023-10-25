@@ -1,0 +1,28 @@
+package com.himedia.springboot;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface mallDAO {
+	void insert(String userid, String passcode, String username, String gender, String birthday, String mobile);
+	int select(String userid, String passcode);
+	int adminselect(String userid, String passcode);
+	ArrayList<mallDTO> getNovel(int start, int psize);
+	ArrayList<mallDTO> getAll(int start, int psize);
+	ArrayList<mallDTO> getHistory(int start, int psize);
+	int getTotal();
+	int getnovelTotal();
+	int gethistoryTotal();
+	mallDTO bselect(int seq, String genre);
+	mallDTO orders(int seq);
+	void paymentinsert(String userid, String mobile, String qty, String sum);
+	void addbookinsert(String name, String price, String genre, String img, String author, String prodinfo);
+	void hitup(int seqno);
+	mallDTO selectCart();
+	void addcart(int seq);
+	int count(int seq);
+	
+}

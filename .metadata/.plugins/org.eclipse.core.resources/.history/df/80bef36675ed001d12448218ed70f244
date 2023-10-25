@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+//조건문:조건판단해서 실행할 문장을 선택 :if,switch
+//반복문:조건에 맞으면 반복:while,do-while,for
+public class Control_Statement01 {
+
+	public static void main(String[] args) {
+		Scanner s =new Scanner(System.in);
+		// TODO Auto-generated method stub
+
+//		if(비교/논리){
+//			조건이'참(true)'일 때 실행문들
+//		}
+//		if(비교/논리) {
+//			조건이 '참(true)'일때 실행문들
+//		}else {
+//			조건이 '거짓(false)'일때 실행
+//		}
+		
+		
+//		String a=s.nextLine();
+//		String b=s.nextLine();
+		int a=s.nextInt();
+		int b=s.nextInt(); //hard conding 데이터를 직접 넣는코딩
+//		if(a.equals("Hello")) 
+//		System.out.println("a="+a+"\nb="+b);
+//		if(a>b){
+//			System.out.println("a="+a);
+//			System.out.println("a is greater than b.");
+//			System.out.println("a is equal to\"Hello\"."); //큰따움표를 쓸려면 \"hello\"
+//		}else {
+//			System.out.println("a is less than or equal to\"Hello\".");
+//			System.out.println("b="+b);
+//			System.out.println("a is less than or equal to b");//반복문 조건문 안에 실행문이 한개일때만{}를 생략할 수 있다.
+//		}														//들여쓰기(indentation)을 강력권장
+//		System.out.println("Program ended.");
+		switch(a) {
+		case 100:
+
+			break;//다음 case문이 나오기전에 만드시 써야함
+		case 90:
+		
+			break;
+		case 80:
+			break;
+		default: //else
+		}
+	}
+
+}

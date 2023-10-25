@@ -1,0 +1,17 @@
+import java.awt.Toolkit;
+
+public class BeepPrintMain {
+
+	public static void main(String[] args) {
+		Runnable bt = new BeepTask(); // 인터페이스이름 변수 = new 구현클래스이름
+		Thread thread = new Thread(bt);
+		thread.start();//start() -> run()
+		// TODO Auto-generated method stub
+		
+		for(int i=0; i<5; i++) {
+			System.out.println("Click");
+			try {Thread.sleep(500);} catch (InterruptedException e) {}
+		}
+	}
+
+}

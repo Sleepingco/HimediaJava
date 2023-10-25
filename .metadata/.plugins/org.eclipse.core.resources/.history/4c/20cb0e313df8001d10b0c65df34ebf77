@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+
+public class Sales {
+	private ArrayList<String> alMobile;
+	private ArrayList<String> alMenu;
+	private ArrayList<Integer> alQty;
+	private ArrayList<Integer> alSum;
+	private ArrayList<String> alTime;
+	
+	Sales(){
+		//reset
+	}
+	void add(Order sorder) { //mobile,menuname.qty,sum from order,time(yyyymmddhhmmss)//save in alTime
+		while(true) {
+			sorder.display();
+			for(int i=0; i<alMenu.size();i++)
+				System.out.printf("%2d %-15s %-3d %-6d\n",i,alMenu.get(i),alQty.get(i),alSum.get(i));
+		}
+	}
+	void display(){
+		//매출 데이터 전체 출력
+		//매출 총액 계산&출력
+	}
+}

@@ -1,0 +1,31 @@
+
+import java.util.Scanner;
+
+public class CafeManeger {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner i1 = new Scanner(System.in);
+		Scanner s1 = new Scanner(System.in);
+		
+		CafeMenu myMenu = new CafeMenu("c:\\Temp\\menu.txt"); 
+									
+	while(true) {
+		System.out.println("Enter a job[c:addMenu, r:Display Menu, u:updateMenu, d:DeleteMenu");
+		String job=s1.nextLine();
+		if(job.equals("")) break;
+			if(job.equals("c")) {
+				myMenu.add();
+			}else if(job.equals("r")){
+				myMenu.display();
+			}else if(job.equals("u")) {
+				myMenu.update();
+			}else if(job.equals("d")) {
+				myMenu.delete();
+			}
+		}
+		myMenu.save();
+		s1.close();
+		i1.close();
+	}
+}

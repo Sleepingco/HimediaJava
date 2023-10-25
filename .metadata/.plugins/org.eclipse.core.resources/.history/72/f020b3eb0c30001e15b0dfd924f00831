@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인</title>
+</head>
+<%@ include file="../home.jsp" %>
+<body>
+<form if=frmlogin method=post action=login>
+<table align=center>
+	<tr>
+		<td colspan=3>로그인아이디<input type="text" name="lid" id="lid" value="<%=request.getParameter("userid") %>"></input></td>
+	</tr>
+	<tr>
+		<td colspan=3>비밀번호<input type="password" name="lpw" id="lpw" value="<%=request.getParameter("passcode1") %>"></input></td>
+	</tr>
+	<tr>
+		<td><input type=submit id=btnSubmit value='가입'> &nbsp;  </td>	
+		<td><input type=reset id=btnReset value='비우기'> &nbsp;  </td>
+		<td><a href="/register">회원가입</a></td>
+	</tr>
+</table>
+</form>
+</body>
+</html>

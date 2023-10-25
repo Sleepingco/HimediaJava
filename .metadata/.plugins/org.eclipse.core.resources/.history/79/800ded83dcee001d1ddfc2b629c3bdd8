@@ -1,0 +1,140 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+//for,while,do-while
+//배열 인덱스 array arraylist
+public class Control_Statement02 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//while(비교/논리){
+		//조건이 '참일 때, 실행문들
+		//}
+		Scanner i = new Scanner(System.in);
+		
+//		int a;
+//		a=1;
+//		
+//		while(a<=10) { //거짓이되지않게끔 조건을 안 넣어주면 무한루프됨
+//			System.out.println(a);
+//			a++;		//변동부는 프로그램 맨 마지막에 쓰는걸 권장
+//		}				//1.초기화 2.조건 3.변동부
+//						//while문은 최소 0회 실행된다
+//		System.out.println("Program Ended");
+		
+		
+//		a=101;
+//		while(a<=130) {
+//			System.out.println(a);
+//			a++;
+//		}
+//		System.out.println("Program Ended");
+		
+		
+//		1~100까지 홀수
+//		a=1;
+//		while(a<100) {
+//			System.out.println(a);
+//			a+=2; //a=a+2;
+//		}
+//		System.out.println("Program Ended");
+		
+//		int g=0;
+//		int total=0;
+//		while(g<=100) {
+//			total+=g; 	//위 아래 순서가 바뀌면  0~101까지 더한다
+//			g++;		//왜냐하면 i가 100을 도달한 다음에 a++를 더한다 그러고
+//						//101을 더한다음에 i가 101이라는 것을 인식 101도 더함
+//			
+//		}
+//		System.out.println(total);
+//		System.out.println("Program Ended");
+//		
+//		int i,j;
+//		i=0;	//구구단을 작성할 수 있다
+//		while(i<3) {
+//			j=10;
+//			while (j<13) {
+//				System.out.println(i+","+j);
+//				j++;
+//			}
+//			i++;
+//		}
+//		System.out.println("Program Ended");
+
+		
+		
+//		배열(Array)
+//		int[] mscore; int mscore[];//배열선언 
+//		null은 아무것도 없는 값으로 만드느게 null 0과는 다른개념		
+//		int mscore[]= {80,96,100,76,36,88};//길이와 값으로 초기화
+//		int mscore[]=null;//완전 초기화
+//		int mscore[]=new int[6];//길이로만 (초기값없이) 배열 선언
+//		int[] mscore= {80,96,100,76,36,88};//길이와 값으로 초기화 교재에 많이 나오는 예제
+//		int[] mscore=null;//완전 초기화
+//		int[] mscore=new int[6];//길이로만 (초기값없이) 배열 선언
+//		int[] mscore= {80,96,100,76,36,88}; //인덱스는 0부터 시작함 길이가 6이면 마지막 인덱스 번호는 6-1==5
+//		int escore[]= {70,90,80,40,20,50,30};
+		
+//		mscore[0]=48; 인덱스 위체에 값을 바꿈
+//		mscore[1]=78;
+//		mscore[2]=98;
+//		mscore[3]=1;
+//		System.out.println(mscore[0]);
+//		System.out.println(mscore[1]);
+//		System.out.println(mscore[2]);
+//		System.out.println(mscore[3]);
+//		System.out.println(mscore[4]);
+//		System.out.println(mscore[5]);
+		
+//		int ndx=0;						//인덱스 값을 반복문으로 바꿔서 출력할수 있음
+//		while(ndx<mscore.length) {
+//			System.out.println(mscore[ndx]);
+//			ndx++;
+//		}
+		
+//		int ndx =0;
+//		System.out.println(mscore[ndx]); //index값을 변수로 바꿔서도 표현가능
+//		ndx++;
+//		System.out.println(mscore[ndx]);
+//		ndx++;
+//		System.out.println(mscore[ndx]);
+//		ndx++;
+//		System.out.println(mscore[ndx]);
+//		ndx++;
+//		System.out.println(mscore[ndx]);
+//		ndx++;
+//		System.out.println(mscore[ndx]);
+//		ndx++;
+		
+//		System.out.println("mscore의 길이"+mscore.length); //배열의 길이를 알아낼때 배열이름.length을 쓴다
+//		System.out.println("escore의 길이"+escore.length);
+		
+		
+		
+		
+//		arrayList 가변길이
+//		ArryList mscore
+//		타입 이름을 쓸때 전부써줘야함 558p
+		
+		ArrayList<Integer> alMath = new ArrayList<Integer>();
+		ArrayList<String> strNames;
+		ArrayList<Double> Doubles;
+		int score=i.nextInt();
+		while(score>-1) {
+			alMath.add(score);
+			score=i.nextInt();
+		}
+		//배열의 길이:배열명.length
+		//배열리스트의 길이: 배열리스트명.size()
+		System.out.println("__________________");
+		int ndx=0;
+		while(ndx<alMath.size()) {
+			System.out.println(alMath.get(ndx));
+			ndx++;
+			
+		}
+		
+	}				
+
+}

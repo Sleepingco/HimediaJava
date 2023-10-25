@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.himedia.springboot.P_membercontrollDAO">
+<select id="dosearch" resultType="com.himedia.springboot.P_membercontrollDTO">
+	SELECT userid,NAME,gender,birthday,mobile,created FROM MEMBER WHERE ADMIN = #{param1};
+</select>
+
+</mapper>

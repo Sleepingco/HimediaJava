@@ -1,0 +1,8 @@
+package com.example.demo;
+
+public class DepDTO {
+	String depatment_name;
+	String emp_name;
+	int department_id;
+	int manager_id;
+}

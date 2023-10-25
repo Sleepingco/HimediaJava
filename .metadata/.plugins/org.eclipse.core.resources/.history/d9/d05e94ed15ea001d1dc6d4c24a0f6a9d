@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class sub3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s1=new Scanner(System.in);
+		Scanner i1=new Scanner(System.in);
+		
+		String ss=s1.nextLine();
+		int ii=i1.nextInt();
+		
+		System.out.printf("%12s\n",ss);
+		System.out.printf("%4d\n",ii);
+	}
+
+}

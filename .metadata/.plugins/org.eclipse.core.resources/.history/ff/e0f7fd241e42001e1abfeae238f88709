@@ -1,0 +1,6 @@
+package com.himedia.springboot;
+
+@Controller
+public class P_SearchbarController {
+
+}

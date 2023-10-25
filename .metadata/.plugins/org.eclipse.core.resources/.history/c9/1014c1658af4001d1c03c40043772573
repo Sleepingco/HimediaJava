@@ -1,0 +1,14 @@
+
+public class Student {
+	//접근제한자(Access Modifier)
+	//-private(같은 패키지에 속했건 외부 패키지에 속했건 접급불가)
+	//-public(private과는 정반대 프로젝트 전체 내에서 공유 가능)
+	//-(default)(같은패키지 안에 다른 패키지만 접근가능)
+	//-protected
+	String name;
+	String mobile;
+	String birthday;
+	String schoolName;
+	int entryYear;
+		
+}

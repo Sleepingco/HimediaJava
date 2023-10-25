@@ -1,0 +1,13 @@
+package com.himedia.springboot;
+
+public class Member {
+	String userid;
+	String passcode1;
+	String passcode2;
+	String name;
+	String birthday;
+	String gender;
+	String mobile;
+	String interest[];
+	String region[];
+}

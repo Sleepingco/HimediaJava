@@ -1,0 +1,68 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form view</title>
+<style>
+table{
+	width:80%;
+	margin-left: auto;
+  	margin-right: auto;
+}
+
+table {
+	border-collapse:collapse;
+	width: 75%
+}
+table th{
+	background-color:black;color:yellow;
+	border:1px solid yellow
+}
+table td{
+	border:1px solid black
+}
+</style>
+</head>
+<body>
+<form method="post" action="/modify" name=frmUpdate id=frmUpdate>
+<table>  <!-- ${bpost.seqno}표현언어로 jsp내부 장착이다 -->
+<tr>
+	<td>게시물번호</td>
+	<td>${bpost.seqno}<input type=hidden id=seqno name=seqno value="${bpost.seqno}" readonly></td>
+</tr>
+<tr>
+	<td>제목</td>
+	<td>
+		<input type=text name=title id=title value="${bpost.title}" size=64 maxlength=128>
+	</td>
+</tr>
+<tr><td>내용</td><td><textarea rows=10 cols=50 name=content id=content>${bpost.content}</textarea></td></tr>
+<tr><td>작성자</td><td>${bpost.writer}</td></tr>
+<tr><td>조회수</td><td>${bpost.hit}</td></tr>
+<tr><td>작성시간</td><td>${bpost.created}</td></tr>
+<tr><td>수정시간</td><td>${bpost.updated}</td></tr>
+<tr>
+<td><a href="/">목록으로</a>
+</td>
+<td style='text-align:right'>
+	<input type=submit id=btnUpdate value='수정완료'>&nbsp;&nbsp;
+</td>
+</tr>
+</table>
+</form>
+</body>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(document)
+.on('submit','#frmUpdate',function(){
+	if($('#title').val()==''){
+		alert('제목을 입력하시오'); return false;
+	}
+	if($('#content').val()==''){
+		alert('게시물을 입력하시오'); return false;
+	}
+})
+</script>
+</html>

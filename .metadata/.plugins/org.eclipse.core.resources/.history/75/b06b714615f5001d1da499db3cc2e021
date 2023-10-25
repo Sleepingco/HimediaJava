@@ -1,0 +1,11 @@
+
+public class School {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Student person = new Student();
+		//lee.house school = new lee.house 다른 패키지 접근
+		person.setName("john");
+	}
+
+}
